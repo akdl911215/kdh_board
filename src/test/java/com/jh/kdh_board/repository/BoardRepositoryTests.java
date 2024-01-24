@@ -84,7 +84,7 @@ public class BoardRepositoryTests {
 
             Board board = Board.builder()
                     .title("Title" + i)
-                    .contnet("Content" + i)
+                    .content("Content" + i)
                     .writer(member)
                     .build();
 
