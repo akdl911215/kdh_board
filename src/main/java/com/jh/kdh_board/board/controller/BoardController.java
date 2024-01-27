@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/board/")
 @Log4j2
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class BoardController {
 
     private final BoardService boardService;
