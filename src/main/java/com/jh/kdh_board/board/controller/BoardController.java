@@ -27,6 +27,7 @@ public class BoardController {
         return response;
     }
 
+
     @PostMapping("/register")
     public BoardDTO register(BoardDTO boardDTO) {
 
@@ -46,7 +47,8 @@ public class BoardController {
     }
 
     @PatchMapping("/update")
-    public BoardDTO update(BoardDTO boardDTO) {
+    public BoardDTO update(@RequestBody BoardDTO boardDTO) {
+        log.info("update boardDTO : " + boardDTO);
         BoardDTO response = boardService.modify(boardDTO);
 
         log.info("response : " + response);
@@ -64,8 +66,8 @@ public class BoardController {
         return boardDTO;
     }
 
-    @GetMapping("/read")
-    public BoardDTO read(@RequestParam("id") Long id) {
+    @GetMapping("/read/{id}")
+    public BoardDTO read(@PathVariable Long id) {
         log.info("read id : " + id);
 
         BoardDTO response = boardService.get(id);
