@@ -29,7 +29,7 @@ public class BoardController {
 
 
     @PostMapping("/register")
-    public BoardDTO register(BoardDTO boardDTO) {
+    public BoardDTO register(@RequestBody BoardDTO boardDTO) {
 
         log.info("register start : " + boardDTO);
 
@@ -57,7 +57,7 @@ public class BoardController {
     }
 
     @PatchMapping("/remove")
-    public BoardDTO remove(Long id) {
+    public BoardDTO remove(@RequestBody Long id) {
         log.info("remove id : " + id);
 
         BoardDTO boardDTO = boardService.removeRelatedBoard(id);
