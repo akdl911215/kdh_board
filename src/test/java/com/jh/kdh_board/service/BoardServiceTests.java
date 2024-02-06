@@ -35,7 +35,7 @@ public class BoardServiceTests {
     @Test
     public void testGet() {
 
-        Long id = 1L;
+        Long id = 16L;
 
         BoardDTO boardDTO = boardService.get(id);
 

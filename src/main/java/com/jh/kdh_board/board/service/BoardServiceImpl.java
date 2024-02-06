@@ -60,8 +60,10 @@ public class BoardServiceImpl implements BoardService {
     public BoardDTO get(Long id) {
 
         Object result = boardRepository.getBoardByBoardId(id);
+        log.info("result : " + result);
 
         Object[] arr = (Object[]) result;
+        log.info("arr : " + arr);
 
         return entityToDto2((Board)arr[0], (Member)arr[1], (Long)arr[2]);
     }
